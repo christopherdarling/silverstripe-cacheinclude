@@ -29,7 +29,8 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "5.x-dev"
+            "dev-master": "5.x-dev",
+            "dev-fix/yaml-4": "5.x-dev"
         }
     },
     "prefer-stable": true,
