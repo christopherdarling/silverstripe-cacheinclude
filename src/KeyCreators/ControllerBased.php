@@ -39,7 +39,7 @@ class ControllerBased implements KeyCreatorInterface, KeyInformationProviderInte
      * @param  Controller|void $controller
      * @throws \Exception
      */
-    public function __construct(Controller $controller = null)
+    public function __construct(Controller $controller)
     {
         if (!$controller && !Controller::has_curr()) {
             throw new \Exception("Controller based key creators must have a current controller");
