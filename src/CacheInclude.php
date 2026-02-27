@@ -53,7 +53,7 @@ class CacheInclude
      * @param ConfigInterface $config
      * @param bool $forceExpire
      */
-    public function __construct(ConfigInterface $config = null, $forceExpire = false)
+    public function __construct(?ConfigInterface $config = null, $forceExpire = false)
     {
         $this->cache = Injector::inst()->get(CacheInterface::class . '.CacheInclude');
 
