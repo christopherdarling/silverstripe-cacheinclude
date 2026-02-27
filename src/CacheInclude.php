@@ -415,7 +415,7 @@ class CacheInclude
      * @param array $config
      * @return string
      */
-    protected function getKey($name, KeyCreatorInterface $keyCreator, array $config = null)
+    protected function getKey($name, KeyCreatorInterface $keyCreator, ?array $config = null)
     {
         $config = $config ?: $this->getCombinedConfig($name);
         $key = $keyCreator->getKey($name, $config);
