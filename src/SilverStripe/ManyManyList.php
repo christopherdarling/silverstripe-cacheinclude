@@ -13,7 +13,7 @@ class ManyManyList extends SilverStripeManyManyList
      * @param null $extraFields
      * @throws \Exception
      */
-    public function add($item, $extraFields = null)
+    public function add(mixed $item, array $extraFields = []): void
     {
         parent::add($item, $extraFields);
 
