@@ -19,8 +19,6 @@ class BuildTask extends SilverStripeBuildTask
 
     protected string $title = 'Cache Include clear task';
 
-    protected $description = 'Clear all cache include caches (with all=1), or named ones (with name=foo)';
-
     /**
      * @param CacheInclude $cache
      */
