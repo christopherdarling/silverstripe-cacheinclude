@@ -5,6 +5,8 @@ namespace Heyday\CacheInclude\SilverStripe;
 use Heyday\CacheInclude\CacheInclude;
 use SilverStripe\Dev\BuildTask as SilverStripeBuildTask;
 use SilverStripe\Versioned\Versioned;
+use SilverStripe\PolyExecution\PolyOutput;
+use Symfony\Component\Console\Input\InputInterface;
 
 class BuildTask extends SilverStripeBuildTask
 {
@@ -15,7 +17,7 @@ class BuildTask extends SilverStripeBuildTask
 
     private static $segment = 'CacheIncludeClearTask';
 
-    protected $title = 'Cache Include clear task';
+    protected string $title = 'Cache Include clear task';
 
     protected $description = 'Clear all cache include caches (with all=1), or named ones (with name=foo)';
 
@@ -28,14 +30,14 @@ class BuildTask extends SilverStripeBuildTask
         parent::__construct();
     }
 
-    public function run($request)
+    public function execute(InputInterface $input, PolyOutput $output): int
     {
         $all = $request->getVar('all');
         $name = $request->getVar('name');
 
         if ($all === null && $name === null) {
             echo 'You must specify a cache with name=cachename, or flush all caches with all=1' . PHP_EOL;
-            exit;
+            return 0;
         }
 
         if ($all !== null) {
@@ -57,5 +59,7 @@ class BuildTask extends SilverStripeBuildTask
                 $callback($stage);
             }
         });
+
+        return 1;
     }
 }
