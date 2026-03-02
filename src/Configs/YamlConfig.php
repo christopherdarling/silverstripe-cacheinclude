@@ -12,7 +12,7 @@ class YamlConfig extends ArrayConfig
      * @param CacheInterface $cache
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function __construct($yaml, CacheInterface $cache = null)
+    public function __construct($yaml, ?CacheInterface $cache = null)
     {
         if ($cache instanceof CacheInterface) {
             if (strpos($yaml, "\n") === false && is_file($yaml)) {
