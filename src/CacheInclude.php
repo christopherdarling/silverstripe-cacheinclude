@@ -291,7 +291,7 @@ class CacheInclude
             return $lockFilePath;
         }
 
-        return TEMP_FOLDER . '/cacheinclude.lock';
+        return TEMP_PATH . '/cacheinclude.lock';
     }
 
     /**
