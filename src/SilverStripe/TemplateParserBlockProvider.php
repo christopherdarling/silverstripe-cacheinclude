@@ -66,7 +66,8 @@ PHP;
 \$val .= \SilverStripe\Core\Injector\Injector::inst()->get({$cacheInclude})->process(
    {$configName},
    function () use (\$scope) {
-       return \SilverStripe\View\SSViewer::execute_template({$res['Arguments'][0]['text']}, \$scope->getItem(), array(), \$scope);
+   
+       return \SilverStripe\Core\Injector\Injector::inst()->get('SilverStripe\View\TemplateEngine')::execute_template({$res['Arguments'][0]['text']}, \$scope->getCurrentItem(), array(), \$scope);
    },
    \SilverStripe\Core\Injector\Injector::inst()->get({$keyCreator})
 );
