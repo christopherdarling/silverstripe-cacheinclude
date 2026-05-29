@@ -4,7 +4,7 @@ Name: cacheinclude
 SilverStripe\Core\Injector\Injector:
   SilverStripe\ORM\ManyManyList:
     class: 'Heyday\CacheInclude\SilverStripe\ManyManyList'
-  SilverStripe\View\SSTemplateParser:
+  SilverStripe\TemplateEngine\SSTemplateParser:
     properties:
       closedBlocks:
         cache: 'Heyday\CacheInclude\SilverStripe\TemplateParserBlockProvider::cacheTemplate'
